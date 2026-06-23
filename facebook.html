@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <script src="https://5gvci.com/act/files/tag.min.js?z=11101085" data-cfasync="false" async></script>
+    <script>(function(s){s.dataset.zone='11101068',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Video Downloader | QuickSave+</title>
+    <meta name="description" content="Download Facebook videos and Reels instantly. Free, fast, no sign-up required.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.quicksaveplus.xyz/facebook.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-orbs" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<nav class="navbar">
+    <div class="navbar-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 13.41V8a1 1 0 012 0v7.41l2.3-2.3a1 1 0 111.41 1.41l-4 4a1 1 0 01-1.41 0l-4-4a1 1 0 111.41-1.41L11 15.41z"/></svg>
+            </div>
+            <span class="logo-text">Quick<span class="logo-save">Save</span><span class="logo-plus">+</span></span>
+        </a>
+        <div class="nav-links">
+            <a class="nav-link" href="tiktok.html"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a class="nav-link" href="youtube.html"><i class="fab fa-youtube"></i> YouTube</a>
+            <a class="nav-link" href="instagram.html"><i class="fab fa-instagram"></i> Instagram</a>
+            <a class="nav-link active" href="facebook.html"><i class="fab fa-facebook"></i> Facebook</a>
+            <a class="nav-link" href="twitter.html"><i class="fab fa-x-twitter"></i> X</a>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme"><i class="fas fa-moon" id="themeIcon"></i></button>
+            <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</nav>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 13.41V8a1 1 0 012 0v7.41l2.3-2.3a1 1 0 111.41 1.41l-4 4a1 1 0 01-1.41 0l-4-4a1 1 0 111.41-1.41L11 15.41z"/></svg></div>
+            <span class="logo-text">Quick<span class="logo-save">Save</span><span class="logo-plus">+</span></span>
+        </a>
+        <button class="sidebar-close" onclick="closeSidebar()"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+        <div class="sidebar-label">Downloaders</div>
+        <a class="sidebar-link" href="tiktok.html"><div class="icon"><i class="fab fa-tiktok"></i></div> TikTok</a>
+        <a class="sidebar-link" href="youtube.html"><div class="icon"><i class="fab fa-youtube"></i></div> YouTube</a>
+        <a class="sidebar-link" href="instagram.html"><div class="icon"><i class="fab fa-instagram"></i></div> Instagram</a>
+        <a class="sidebar-link active" href="facebook.html"><div class="icon"><i class="fab fa-facebook"></i></div> Facebook</a>
+        <a class="sidebar-link" href="twitter.html"><div class="icon"><i class="fab fa-x-twitter"></i></div> X (Twitter)</a>
+    </nav>
+    <div class="sidebar-footer"><p>© 2026 QuickSave+ &nbsp;·&nbsp; Download responsibly.</p></div>
+</aside>
+
+<div class="page-wrap">
+    <main>
+        <section class="hero">
+            <div class="hero-badge"><span class="dot"></span> Free · Fast · No Sign-up</div>
+            <h1 class="hero-title">Download Facebook Videos<br><span class="gradient-text">Instantly.</span></h1>
+            <p class="hero-sub">Download Facebook videos and Reels in HD instantly — no account needed.</p>
+
+            <div class="main-card">
+                <div class="platform-tab"><i class="fab fa-facebook"></i> Facebook Downloader</div>
+                <div class="input-bar">
+                    <input type="text" id="mediaUrl" placeholder="Paste Facebook video link here..." autocomplete="off" autocorrect="off" spellcheck="false">
+                    <button class="btn-icon" id="pasteBtn" title="Paste from clipboard"><i class="far fa-clipboard"></i></button>
+                    <button class="btn-get" id="analyzeBtn"><span>Get</span><i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="error-box" id="errorAlert"><i class="fas fa-exclamation-circle"></i><span id="errorText">Invalid link.</span></div>
+                <div class="loader" id="loader"><div class="spinner"></div><p id="loaderText">Fetching video data…</p></div>
+
+                <div class="result-section" id="resultCard">
+                    <div class="thumb-wrap" id="thumbWrap"><img id="videoThumbnail" src="" alt="Thumbnail"></div>
+                    <p class="video-desc" id="videoDesc"></p>
+                    <div class="dl-buttons" id="genericDlBtns" style="display:none">
+                        <button class="btn-dl-primary" id="dlGeneric"><i class="fas fa-cloud-download-alt"></i> Download Video</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script async="async" data-cfasync="false" src="https://pl29639371.effectivecpmnetwork.com/b4e01a2ac2851bbf83352569b1b359f2/invoke.js"></script>
+        <div id="container-b4e01a2ac2851bbf83352569b1b359f2"></div>
+
+        <section class="how-section">
+            <p class="section-label">How it works</p>
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-num">1</div><div class="step-title">Copy Link</div><p class="step-desc">Open Facebook, tap the share button on a video and copy the link.</p></div>
+                <div class="step-card"><div class="step-num">2</div><div class="step-title">Paste & Analyze</div><p class="step-desc">Paste the link above and hit Get. We'll fetch the video instantly.</p></div>
+                <div class="step-card"><div class="step-num">3</div><div class="step-title">Download</div><p class="step-desc">Tap download and save the video directly to your device.</p></div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <p class="section-label">FAQ</p>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I download Facebook Reels?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Yes, Facebook Reels and regular video posts are both supported as long as they are public.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why can't I download a video?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Only public Facebook videos can be downloaded. Private or friends-only posts are not accessible without login.</p></div></div>
+            <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this free to use?<i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Yes, completely free. No account, no limits, no hidden charges.</p></div></div>
+        </section>
+    </main>
+    <footer>© 2026 QuickSave+ &nbsp;·&nbsp; Built for speed &nbsp;·&nbsp; Download responsibly.</footer>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+    let genericVideoUrl = '';
+
+    initPaste('mediaUrl');
+
+    document.getElementById('analyzeBtn').addEventListener('click', async () => {
+        const url = document.getElementById('mediaUrl').value.trim();
+        hideError();
+        document.getElementById('resultCard').style.display = 'none';
+        document.getElementById('genericDlBtns').style.display = 'none';
+
+        if (!url) { showError('Please paste a Facebook link first.'); return; }
+        if (!url.includes('facebook.com') && !url.includes('fb.watch')) {
+            showError("That doesn't look like a valid Facebook link."); return;
+        }
+
+        toggleLoading(true, 'Fetching Facebook video…');
+        try { await fetchFacebook(url); }
+        catch (err) { toggleLoading(false); showError(err.message || 'Network error. Please retry.'); }
+    });
+
+    async function fetchFacebook(url) {
+        let data;
+        try {
+            data = await callWorker(url, 'facebook', false);
+        } catch (workerErr) {
+            try {
+                const res = await fetch('https://api.cobalt.tools/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ url }),
+                });
+                if (!res.ok) throw new Error();
+                data = await res.json();
+                if (data.status === 'error') throw new Error(data.error?.code || 'Failed');
+            } catch {
+                throw new Error('Facebook: ' + workerErr.message);
+            }
+        }
+
+        genericVideoUrl = resolveUrl(data.url || data.picker?.[0]?.url);
+        if (!genericVideoUrl) { toggleLoading(false); throw new Error('No video found. Make sure the post is public.'); }
+
+        document.getElementById('videoThumbnail').src = data.thumbnail ? resolveUrl(data.thumbnail) : placeholder('Facebook+Video');
+        document.getElementById('videoDesc').textContent = data.title || 'Facebook Video';
+        document.getElementById('videoDesc').style.display = 'block';
+        document.getElementById('thumbWrap').style.display = 'block';
+        document.getElementById('dlGeneric').onclick = () =>
+            processDownload(genericVideoUrl, makeFilename('facebook', 'mp4', extractId(url)));
+        document.getElementById('genericDlBtns').style.display = 'flex';
+
+        toggleLoading(false);
+        document.getElementById('resultCard').style.display = 'block';
+    }
+</script>
+</body>
+</html>
