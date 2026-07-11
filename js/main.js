@@ -81,24 +81,27 @@ async function callWorker(mediaUrl, platform, isAudioOnly) {
 }
 
 // ── Download ──
-async function processDownload(targetUrl, filename) {
+async function processDownload(targetUrl, filename, btnEl) {
     if (!targetUrl) { showError('Download URL not found.'); return; }
-    const btn = event?.currentTarget;
+    const btn = btnEl || event?.currentTarget;
     const orig = btn?.innerHTML;
-    if (btn) { btn.disabled = true; btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Downloading…`; }
+    if (btn) { btn.disabled = true; btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Starting download…`; }
     try {
-        const res = await fetch(targetUrl);
-        if (!res.ok) throw new Error();
-        const blob = await res.blob();
-        const blobUrl = URL.createObjectURL(blob);
         const a = document.createElement('a');
-        a.href = blobUrl; a.download = filename; a.style.display = 'none';
-        document.body.appendChild(a); a.click(); document.body.removeChild(a);
-        URL.revokeObjectURL(blobUrl);
+        a.href = targetUrl;
+        a.download = filename;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     } catch {
         window.open(targetUrl, '_blank');
     } finally {
-        if (btn) { btn.innerHTML = orig; btn.disabled = false; }
+        // Brief delay so the button doesn't flash back instantly —
+        // the browser takes over the actual download from here.
+        setTimeout(() => {
+            if (btn) { btn.innerHTML = orig; btn.disabled = false; }
+        }, 800);
     }
 }
 
