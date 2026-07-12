@@ -9,8 +9,8 @@ CORS(app)
 
 @app.route('/', methods = ['GET'])
 def index():
-return jsonify({
-    'status': 'QuickSavePlus yt-dlp API running'
+    return jsonify({
+     'status': 'QuickSavePlus yt-dlp API running'
 })
 
 @app.route('/fetch', methods = ['POST'])
