@@ -15,12 +15,12 @@ def index():
 
 @app.route('/fetch', methods = ['POST'])
 def fetch_media():
-data = request.get_json(force = True)
-url = data.get('url', '').strip()
-audio_only = data.get('audioOnly', False)
+    data = request.get_json(force = True)
+    url = data.get('url', '').strip()
+    audio_only = data.get('audioOnly', False)
 
-if not url:
-return jsonify({
+    if not url:
+    return jsonify({
     'status': 'error', 'text': 'Missing url'
 }), 400
 
@@ -114,10 +114,10 @@ return jsonify({
 
 @app.route('/thumb', methods = ['GET'])
 def proxy_thumb():
-"""Proxy thumbnail images to avoid CDN CORS blocks."""
-thumb_url = request.args.get('url', '')
-if not thumb_url:
-return jsonify({
+    """Proxy thumbnail images to avoid CDN CORS blocks."""
+    thumb_url = request.args.get('url', '')
+    if not thumb_url:
+    return jsonify({
     'error': 'Missing url'
 }), 400
 try:
@@ -141,13 +141,13 @@ return jsonify({
 
 @app.route('/proxy', methods = ['GET'])
 def proxy_download():
-"""Stream the media file through this server to avoid CDN auth issues."""
-media_url = request.args.get('url', '')
-title = request.args.get('title', 'video')
-ext = request.args.get('ext', 'mp4')
+    """Stream the media file through this server to avoid CDN auth issues."""
+    media_url = request.args.get('url', '')
+    title = request.args.get('title', 'video')
+    ext = request.args.get('ext', 'mp4')
 
-if not media_url:
-return jsonify({
+    if not media_url:
+    return jsonify({
     'error': 'Missing url'
 }), 400
 
@@ -166,39 +166,39 @@ content_type = upstream.headers.get('Content-Type', f'video/ {
 safe_title = title.replace('"', '').replace("'", '')[:60]
 
 def generate():
-for chunk in upstream.iter_content(chunk_size = 1024 * 64):
-if chunk:
-yield chunk
+    for chunk in upstream.iter_content(chunk_size = 1024 * 64):
+    if chunk:
+    yield chunk
 
-response = Response(
+    response = Response(
     stream_with_context(generate()),
     content_type = content_type,
-)
-response.headers['Content-Disposition'] = f'attachment; filename=" {
+    )
+    response.headers['Content-Disposition'] = f'attachment; filename=" {
     safe_title
-}. {
+    }. {
     ext
-}"'
-response.headers['Access-Control-Allow-Origin'] = '*'
-return response
+    }"'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
-except Exception as e:
-return jsonify({
+    except Exception as e:
+    return jsonify({
     'error': str(e)
 }), 500
 
 
 def _best_url(info):
-formats = info.get('formats', [])
-if not formats:
-return None
-for f in reversed(formats):
-if f.get('vcodec') != 'none' and f.get('acodec') != 'none':
-return f.get('url')
-for f in reversed(formats):
-if f.get('url'):
-return f.get('url')
-return None
+    formats = info.get('formats', [])
+    if not formats:
+    return None
+    for f in reversed(formats):
+    if f.get('vcodec') != 'none' and f.get('acodec') != 'none':
+    return f.get('url')
+    for f in reversed(formats):
+    if f.get('url'):
+    return f.get('url')
+    return None
 
 
 if __name__ == '__main__':
